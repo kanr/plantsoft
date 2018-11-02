@@ -14,7 +14,13 @@ services:
       - "/dev/mem:/dev/mem"
     cap_add:
       - SYS_RAWIO
+  couchdb:
+    build: ./couchdb
+    hostname: couchdb.server
+    ports:
+      - 5984:5984
+      - 4369:4369
+      - 9100:9100
+
 volumes:
-  influxdb:
-  grafana:
   nodered:
