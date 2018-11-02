@@ -1,0 +1,16 @@
+version: '2'
+services:
+  nodered:
+    build: ./nodered
+    #depends_on:
+    #  - influxdb
+    #  - mosquitto
+    volumes:
+      - "nodered:/var/lib/node-red"
+    expose:
+      - "80"
+    devices:
+      - "/dev/i2c-1:/dev/i2c-1"
+      - "/dev/mem:/dev/mem"
+    cap_add:
+      - SYS_RAWIO
