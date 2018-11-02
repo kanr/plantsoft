@@ -20,12 +20,12 @@
 
 module.exports = {
     // the tcp port that the Node-RED web server is listening on
-    uiPort: 80,
+    uiPort: process.env.PORT || 80,
 
     // By default, the Node-RED UI accepts connections on all IPv4 interfaces.
     // The following property can be used to listen on a specific interface. For
     // example, the following would only allow connections from the local machine.
-    uiHost: "0.0.0.0",
+    //uiHost: "0.0.0.0",
 
     // Retry time in milliseconds for MQTT connections
     mqttReconnectTime: 15000,
@@ -48,7 +48,7 @@ module.exports = {
     debugMaxLength: 1000,
 
     // The file containing the flows. If not set, it defaults to flows_<hostname>.json
-    //flowFile: 'flows.json',
+    flowFile: process.env.FLOWFILE,
 
     // To enabled pretty-printing of the flow within the flow file, set the following
     //  property to true:
@@ -83,7 +83,7 @@ module.exports = {
 
     // The following property can be used in place of 'httpAdminRoot' and 'httpNodeRoot',
     // to apply the same root to both parts.
-    httpRoot: '/red',
+    //httpRoot: '/red',
 
     // When httpAdminRoot is used to move the UI to a different root path, the
     // following property can be used to identify a directory of static content
@@ -102,17 +102,17 @@ module.exports = {
     // -----------------
     // To password protect the Node-RED editor and admin API, the following
     // property can be used. See http://nodered.org/docs/security.html for details.
-    //adminAuth: {
-    //    type: "credentials",
-    //    users: [{
-    //        username: process.env.USERNAME,
-    //        password: process.env.PASSWORD,
-    //        permissions: "*"
-    //    }],
-    //    default: {
-    //      permissions: "read"
-    //    }
-    //},
+    adminAuth: {
+        type: "credentials",
+        users: [{
+            username: process.env.USERNAME,
+            password: process.env.PASSWORD,
+            permissions: "*"
+        }],
+        default: {
+            permissions: "*"
+        }
+    },
 
     // To password protect the node-defined HTTP endpoints (httpNodeRoot), or
     // the static content (httpStatic), the following properties can be used.
