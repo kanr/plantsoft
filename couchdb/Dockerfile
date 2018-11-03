@@ -11,7 +11,6 @@
 # the License.
 
 FROM resin/rpi-raspbian
-LABEL maintainer="sahil@ole.org,mappuji@ole.org"
 
 # Add CouchDB user account
 RUN groupadd -r couchdb && useradd -d /opt/couchdb -g couchdb couchdb
