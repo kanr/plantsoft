@@ -11,7 +11,7 @@ services:
       - "80"
     ports:
       - 80:80
-    devices:
+    #devices:
     #  - "/dev/i2c-1:/dev/i2c-1"
     #  - "/dev/mem:/dev/mem"
     cap_add:
