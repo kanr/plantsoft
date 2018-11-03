@@ -10,8 +10,15 @@
 ## Node Red
 
 [](https://github.com/FabLabMons/iotlab-gateway/blob/master/docker-compose.yml)
+[Node-red + couchDB](https://flows.nodered.org/?term=couchdb&num_pages=1)
 
 ## #Couch DB
+
+This repository makes use of the noSQL based CouchDB.
+
+Rationalization: CouchDB has some desireable features for distributed systems. Filtered replication, can continue to operate on intermittent internet connection.
+
+Additional information about [memory in databases and time series data](https://blog.timescale.com/time-series-data-why-and-how-to-use-a-relational-database-instead-of-nosql-d0cd6975e87c)
 
 [guide](http://guide.couchdb.org/draft/performance.html)
 
