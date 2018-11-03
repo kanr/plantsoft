@@ -8,6 +8,8 @@ services:
     volumes:
       - "nodered:/var/lib/node-red"
     expose:
+      - "80"
+    ports:
       - 80:80
     devices:
       - "/dev/i2c-1:/dev/i2c-1"
