@@ -77,9 +77,9 @@ ENV GPG_KEYS \
   29E4F38113DF707D722A6EF91FE9AF73118F1A7C \
   2EC788AE3F239FA13E82D215CDE711289384AE37
 RUN set -xe \
-  && for key in $GPG_KEYS; do \
-    gpg --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; \
-  done
+&& for key in $GPG_KEYS; do \
+gpg --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; \
+done
 
 ENV COUCHDB_VERSION 2.2.0
 
