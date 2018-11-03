@@ -76,6 +76,9 @@ ENV GPG_KEYS \
   E0AF0A194D55C84E4A19A801CDB0C0F904F4EE9B \
   29E4F38113DF707D722A6EF91FE9AF73118F1A7C \
   2EC788AE3F239FA13E82D215CDE711289384AE37
+
+  # Build succeeded after removing set -xe
+  # TODO evaluate the above ^
 RUN for key in $GPG_KEYS; do \
 gpg --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; \
 done
