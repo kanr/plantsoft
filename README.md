@@ -2,10 +2,10 @@
 
 ## Balena
 
-https://www.balena.io/docs/learn/develop/multicontainer/
-https://forums.balena.io/t/device-keeps-building-in-container/3027
-https://github.com/balena-io-projects/multicontainer-demo-rpi3
-https://github.com/balena-io-projects/balena-node-red
+<https://www.balena.io/docs/learn/develop/multicontainer/>
+<https://forums.balena.io/t/device-keeps-building-in-container/3027>
+<https://github.com/balena-io-projects/multicontainer-demo-rpi3>
+<https://github.com/balena-io-projects/balena-node-red>
 
 ## Node Red
 
@@ -19,7 +19,6 @@ https://github.com/balena-io-projects/balena-node-red
 [Rpi Docker CouchDB 2](https://github.com/treehouses/rpi-couchdb)
 
 ## Docker
-
 
 relevant links do docker-compose and Docker work for this project
 
