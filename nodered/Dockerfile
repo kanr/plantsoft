@@ -11,6 +11,7 @@ RUN apt-get update && apt-get install -y build-essential
 RUN JOBS=MAX npm install -g --production --silent \
     node-red \
     node-red-dashboard \
+    node-red-contrib-os \
     #node-red-contrib-influxdb \
     #node-red-contrib-mapper \
     node-red-contrib-resinio \
