@@ -17,8 +17,10 @@ services:
     cap_add:
       - SYS_RAWIO
   couchdb:
-    build: ./couchdb
+    image: couchdb
     hostname: couchdb.server
+    volumes:
+    - "couchdb:/var/lib/couchDb"
     ports:
       - 5984:5984
       - 4369:4369
