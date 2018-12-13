@@ -16,17 +16,33 @@ services:
     #  - "/dev/mem:/dev/mem"
     cap_add:
       - SYS_RAWIO
+    links:
+      - couchdb
   couchdb:
     image: couchdb
     hostname: couchdb.server
     volumes:
-      - "couchdb:/var/lib/couchdb"    
+      - "couchdb:/var/lib/couchdb"
+      # So CouchDB can pick up the configuration
+      - couchdb/local.ini:/usr/local/etc/couchdb/local.ini
+      ## Per default, CouchDB mounts a data volume inside the container at /usr/local/var/lib/couchdb
+      #- ./sijPersistency:/usr/local/var/lib/couchdb
+      ## The log location for CouchDB inside the Docker container is defined in local.ini
+      #- ./logs:/usr/local/var/log/couchdb    
     ports:
       - 5984:5984
       - 4369:4369
       - 9100:9100
     expose:
       - "5984"
+    #environment:
+      # We set the environment variable of the host as an environment variable in the container
+      # See also: https://docs.docker.com/compose/compose-file/#variable-substitution
+      #- COUCHDB_USER=${COUCHDB_USER:-local_admin}
+      #- COUCHDB_PASSWORD=${COUCHDB_PASSWORD:-m8SoSdK4RdcfGe9JeZgRULmaedfZMLbUiGcG}
+
+
+
 
 volumes:
   nodered:

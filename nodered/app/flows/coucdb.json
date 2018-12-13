@@ -1,0 +1,191 @@
+[
+    {
+        "id": "ac9c8185.75c64",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "223857bc.400be8",
+        "type": "couchdb",
+        "z": "ac9c8185.75c64",
+        "name": "test",
+        "serverUrl": "http://localhost:5984",
+        "database": "test",
+        "retrievalType": "byId",
+        "designDoc": "",
+        "viewName": "",
+        "x": 270.5,
+        "y": 112,
+        "wires": [
+            [
+                "da2987dd.6edd68"
+            ]
+        ]
+    },
+    {
+        "id": "da2987dd.6edd68",
+        "type": "debug",
+        "z": "ac9c8185.75c64",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 455.5,
+        "y": 125,
+        "wires": []
+    },
+    {
+        "id": "ef999929.6d0648",
+        "type": "inject",
+        "z": "ac9c8185.75c64",
+        "name": "",
+        "topic": "",
+        "payload": "ba252b0536e307da452d97b1d70005f3",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 94.5,
+        "y": 106,
+        "wires": [
+            [
+                "223857bc.400be8"
+            ]
+        ]
+    },
+    {
+        "id": "a44edf6.ad3a02",
+        "type": "couchdbinsert",
+        "z": "ac9c8185.75c64",
+        "name": "insert into couchDB",
+        "serverUrl": "http://localhost:5984",
+        "database": "test",
+        "x": 352.5,
+        "y": 253,
+        "wires": []
+    },
+    {
+        "id": "da438444.ab6338",
+        "type": "inject",
+        "z": "ac9c8185.75c64",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 148.5,
+        "y": 224,
+        "wires": [
+            [
+                "a44edf6.ad3a02"
+            ]
+        ]
+    },
+    {
+        "id": "979a3bc8.c868a8",
+        "type": "exec",
+        "z": "ac9c8185.75c64",
+        "command": "",
+        "addpay": true,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "oldrc": false,
+        "name": "",
+        "x": 364.5,
+        "y": 466.5,
+        "wires": [
+            [
+                "48eea015.c755"
+            ],
+            [
+                "48eea015.c755"
+            ],
+            [
+                "48eea015.c755"
+            ]
+        ]
+    },
+    {
+        "id": "191f06f4.ec8149",
+        "type": "inject",
+        "z": "ac9c8185.75c64",
+        "name": "database root",
+        "topic": "",
+        "payload": "curl http://192.168.1.233:5984/",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 132.5,
+        "y": 418,
+        "wires": [
+            [
+                "979a3bc8.c868a8"
+            ]
+        ]
+    },
+    {
+        "id": "48eea015.c755",
+        "type": "debug",
+        "z": "ac9c8185.75c64",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 568.5,
+        "y": 466,
+        "wires": []
+    },
+    {
+        "id": "f657d9c8.67ee28",
+        "type": "inject",
+        "z": "ac9c8185.75c64",
+        "name": "create database",
+        "topic": "",
+        "payload": "curl -X PUT http://192.168.1.233:5984/testr",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 138,
+        "y": 480,
+        "wires": [
+            [
+                "979a3bc8.c868a8"
+            ]
+        ]
+    },
+    {
+        "id": "b4a4a766.cb1298",
+        "type": "inject",
+        "z": "ac9c8185.75c64",
+        "name": "",
+        "topic": "",
+        "payload": "ifconfig -a",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 104.5,
+        "y": 357,
+        "wires": [
+            [
+                "979a3bc8.c868a8"
+            ]
+        ]
+    }
+]
