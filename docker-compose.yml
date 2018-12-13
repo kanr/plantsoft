@@ -17,7 +17,7 @@ services:
     cap_add:
       - SYS_RAWIO
   couchdb:
-    image: couchdb
+    image: treehouses/rpi-couchdb
     hostname: couchdb.server
     volumes:
     - "couchdb:/var/lib/couchDb"
