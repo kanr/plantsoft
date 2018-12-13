@@ -6,7 +6,7 @@
 <https://forums.balena.io/t/device-keeps-building-in-container/3027>
 <https://github.com/balena-io-projects/multicontainer-demo-rpi3>
 <https://github.com/balena-io-projects/balena-node-red>
-
+[docker-compose fields](https://www.balena.io/docs/reference/supervisor/docker-compose/)
 ## Node Red
 
 [](https://github.com/FabLabMons/iotlab-gateway/blob/master/docker-compose.yml)
@@ -21,6 +21,14 @@ Rationalization: CouchDB has some desireable features for distributed systems. F
 Additional information about [memory in databases and time series data](https://blog.timescale.com/time-series-data-why-and-how-to-use-a-relational-database-instead-of-nosql-d0cd6975e87c)
 
 [guide](http://guide.couchdb.org/draft/performance.html)
+
+### nuc-x86
+
+
+
+### rpi-armv7
+
+
 
 [rpi Docker CouchDB](https://github.com/dogi/rpi-couchdb)
 [Rpi Docker CouchDB 2](https://github.com/treehouses/rpi-couchdb)
