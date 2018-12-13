@@ -25,6 +25,8 @@ services:
       - 5984:5984
       - 4369:4369
       - 9100:9100
+    expose:
+      - "5984"
 
 volumes:
   nodered:
