@@ -24,7 +24,7 @@ services:
     volumes:
       - "couchdb:/var/lib/couchdb"
       # So CouchDB can pick up the configuration
-      - couchdb/local.ini:/usr/local/etc/couchdb/local.ini
+      #- couchdb/local.ini:/usr/local/etc/couchdb/local.ini
       ## Per default, CouchDB mounts a data volume inside the container at /usr/local/var/lib/couchdb
       #- ./sijPersistency:/usr/local/var/lib/couchdb
       ## The log location for CouchDB inside the Docker container is defined in local.ini
